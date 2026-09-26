@@ -2,6 +2,22 @@
 
 One dated entry per research session: the queries, what was found, links, and what it changed in the backlog. Newest first. A claim with no source does not go in the backlog.
 
+## 2026-09-26 (seventh session): AI preferences in robots.txt, GitHub Actions security, structured data
+
+**Question:** which developments extend tools we already have, so that we do not just add repositories?
+
+**Searches:** Cloudflare Content Signals and RSL; GitHub Actions supply-chain attacks and workflow security; Google structured-data deprecations in 2026.
+
+**Primary sources read in full:** the RSL 1.0 specification's robots.txt section ([rslstandard.org/rsl](https://rslstandard.org/rsl): the `License` directive, absolute URI, global or group scope, group precedence). The IETF draft [draft-romm-aipref-contentsignals-00](https://www.ietf.org/archive/id/draft-romm-aipref-contentsignals-00.txt) defines the three signals but **explicitly does not define the robots.txt syntax**; contentsignals.org rendered as an empty page when fetched. The syntax therefore comes from real robots.txt files and Cloudflare's own description ([Cloudflare's write-up](https://blog.cloudflare.com/control-content-use-for-ai-training/)), and the README says so.
+
+**Findings:** Cloudflare's Content Signals reached 3.8 million domains; RSL launched in September 2025 with support from large publishers; 38% of organisations have a GitHub Actions workflow open to script injection or dangerous triggers ([Datadog Security Labs](https://securitylabs.datadoghq.com/articles/case-for-github-actions-security/)); Google removed FAQ rich results on 7 May 2026 while leaving FAQPage as valid markup.
+
+**What real files showed (the reason to fetch them):** sixteen public robots.txt files were fetched. Every file that used `Content-Signal` or `License` produced a false `unknown-directive` warning in the previous version of the linter, so the gap was real, not theoretical. One widely deployed file places its `Content-Signal` line after its last named group, where it joins that group instead of applying to `*`. Another places `License` in the group of a list of AI crawlers.
+
+**Estate observation (public files, no live-site change):** the robots.txt files of five estate sites lint clean and state no AI preference: all 16 known AI crawlers are unrestricted, and none has a `Content-Signal` or `License` line. Whether that is intended is the owner's decision.
+
+**Result:** `py-robotscheck` 0.3.0. GitHub Actions security scored 11 (gap limited by zizmor and actionlint) and stays in the backlog.
+
 ## 2026-09-26 (sixth session): AI-content markers, with a real test corpus
 
 **Question:** can the AI-content marker audit be built so that its claims can actually be verified?
