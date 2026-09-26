@@ -1,0 +1,127 @@
+{
+  "_help": "Overrides (repo name -> category) win over rules. Otherwise rules are tried in order and the first whose regex matches 'name description' (case-insensitive) wins. Add a rule, override or category here, then run scripts/catalog.py. Repos matching nothing land in the fallback: categorise them.",
+  "rules": [
+    {
+      "category": "Playbook and method",
+      "match": [
+        "^toolsmith-playbook"
+      ]
+    },
+    {
+      "category": "LarzOS money tools and showcases",
+      "match": [
+        "^larz-(budget|meter|receipts)",
+        "^larzos-showcase"
+      ]
+    },
+    {
+      "category": "Larzscript: simulations, algorithms and science",
+      "match": [
+        "^larzscript-"
+      ]
+    },
+    {
+      "category": "Larzscript: utilities",
+      "match": [
+        "^larz-"
+      ]
+    },
+    {
+      "category": "AI agents and LLM tooling",
+      "match": [
+        "agentlint",
+        "tokenbudget",
+        "prompt injection",
+        "\\bMCP\\b",
+        "\\bLLM\\b"
+      ]
+    },
+    {
+      "category": "Security and supply chain",
+      "match": [
+        "depaudit",
+        "supply.chain",
+        "\\bsecrets?\\b",
+        "redact",
+        "jwt",
+        "unicode",
+        "homograph",
+        "sqlcheck",
+        "magicfile",
+        "\\bsecurity\\b"
+      ]
+    },
+    {
+      "category": "Email and deliverability",
+      "match": [
+        "mail",
+        "unsubscribe",
+        "bounce",
+        "placeholder",
+        "dmarc",
+        "\\bspf\\b"
+      ]
+    },
+    {
+      "category": "Web, SEO and content",
+      "match": [
+        "sitemap",
+        "robots",
+        "hreflang",
+        "redirect",
+        "\\butm",
+        "\\blinks?\\b",
+        "linkaudit",
+        "\\burls?\\b",
+        "urlnorm",
+        "\\bpages?\\b",
+        "pageaudit",
+        "\\bcache",
+        "\\bheaders?\\b",
+        "json-?ld",
+        "\\bfeeds?\\b",
+        "readability",
+        "wcag",
+        "markdown",
+        "\\bseo\\b",
+        "htaccess",
+        "punycode"
+      ]
+    },
+    {
+      "category": "Data and files",
+      "match": [
+        "\\bcsv",
+        "\\bjson\\b",
+        "manifest",
+        "\\bdisk\\b",
+        "\\blogs?\\b",
+        "log(scan|stat)",
+        "diff\\b",
+        "dupes?\\b",
+        "checksum",
+        "\\bedit(s|ing)?\\b",
+        "safeedit"
+      ]
+    },
+    {
+      "category": "DevOps and infrastructure",
+      "match": [
+        "\\bcron",
+        "cidr",
+        "\\bdns\\b",
+        "\\bzone",
+        "semver",
+        "duration",
+        "\\benv\\b",
+        "envcheck",
+        "check.?digit"
+      ]
+    }
+  ],
+  "fallback": "Other",
+  "overrides": {
+    "py-zonediff": "DevOps and infrastructure",
+    "py-csvdoctor": "Data and files"
+  }
+}

@@ -1,0 +1,21 @@
+name: test
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: run tests
+        run: python -m unittest discover -s tests -v
+      - name: run the example
+        run: |
+          printf '[{"name":"py-demo","description":"Compare CSV files","url":"https://example.com"}]' > repos.json
+          python scripts/catalog.py repos.json
+          python scripts/scaffold.py demo "Check demo things" --dest /tmp
+          python scripts/checkrepo.py /tmp/py-demo --run-tests || test $? -eq 1
