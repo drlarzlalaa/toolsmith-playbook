@@ -2,6 +2,21 @@
 
 One dated entry per research session: the queries, what was found, links, and what it changed in the backlog. Newest first. A claim with no source does not go in the backlog.
 
+## 2026-09-26 (later): AI-crawler names and robots.txt behaviour
+
+**Question:** which AI crawlers exist, what do they do, and which honour `robots.txt`? (Needed to build the `bots` command in `py-robotscheck`.)
+
+**Queries run:** OpenAI crawlers and user agents; Anthropic ClaudeBot, Claude-User and Claude-SearchBot; Google-Extended, Applebot-Extended, PerplexityBot, Perplexity-User, CCBot, Bytespider, Amazonbot and Meta-ExternalAgent tokens.
+
+**Primary sources read in full:**
+
+- [OpenAI bots page](https://developers.openai.com/api/docs/bots): `GPTBot` (training), `OAI-SearchBot` (ChatGPT search), `ChatGPT-User` (user actions: "robots.txt rules may not apply"), and `OAI-AdsBot` (validates pages submitted as ads). `GPTBot` and `OAI-SearchBot` are governed by robots.txt.
+- [Anthropic help-centre article](https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler): `ClaudeBot` (training), `Claude-User` (user-initiated), `Claude-SearchBot` (search quality); all three explicitly honour robots.txt. It does **not** mention `anthropic-ai`.
+
+**Secondary sources only** (independent 2026 crawler references, found by search): the categories and tokens for Perplexity, Google-Extended, Applebot-Extended, meta-externalagent, Bytespider, CCBot and Amazonbot, and the reports that `Perplexity-User` and `Bytespider` ignore robots.txt. Treated as reported, not confirmed, and worded that way in the tool.
+
+**Lesson:** search-result summaries are not the source. The first draft of the README said the list was "checked against Anthropic's help-centre article" after reading only search snippets of it. Reading the pages found a bot that had been missed (`OAI-AdsBot`) and showed that `anthropic-ai` is not in the current documentation. Read the primary page before writing "checked against".
+
 ## 2026-09-26: first demand scan
 
 **Question:** where do developers and site owners need small offline tools right now?

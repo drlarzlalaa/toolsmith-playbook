@@ -44,6 +44,8 @@ These decide arguments. When two rules conflict, the earlier one wins.
 
 Record every research session in [`RESEARCH-LOG.md`](RESEARCH-LOG.md): date, queries, what was found, and links. A conclusion with no source does not go in the backlog.
 
+**Read the primary source before you write "checked against".** Search results and summaries are leads, not sources. Open the vendor's or standard's own page, and record in the log which sources you read in full and which you only saw summarised. Say the same in the tool's README. (Reading the actual vendor pages for the crawler list found a missing bot and a token the vendor no longer documents.)
+
 ### 3.2 Scoring an opportunity
 
 Score each candidate 0 to 3 on each line, then add. Build the highest scores first. Anything scoring 0 on a line marked **gate** is dropped or reshaped.

@@ -13,7 +13,7 @@ Ranked candidates. Score with the rubric in [`PLAYBOOK.md`](PLAYBOOK.md) section
 | AI-disclosure and endorsement wording checker for affiliate content | 2 | 2 | 2 | 3 | 2 | 11 | idea | FTC risk finding; overlaps `py-rellint`, check first; wording rules are judgement calls, be explicit about that |
 | DMARC aggregate report (XML) summariser | 2 | 2 | 3 | 3 | 2 | 12 | idea | estate receives DMARC reports daily; parse with `xml.etree`, verify on constructed reports |
 | MCP server config diff between two versions | 1 | 2 | 3 | 1 | 2 | 9 | idea | would extend `py-agentlint`; wait for demand |
-| Robots.txt AI-crawler policy checker (GPTBot, ClaudeBot and similar) | 2 | 2 | 3 | 3 | 3 | 13 | idea | estate logs show heavy AI-crawler traffic; extend `py-robotscheck` or new tool; verify against RFC 9309 |
+| Robots.txt AI-crawler policy checker (GPTBot, ClaudeBot and similar) | 2 | 2 | 3 | 3 | 3 | 13 | published: `py-robotscheck` 0.2.0 (`bots` command, an extension, not a new repo) | estate logs show heavy AI-crawler traffic; crawler list verified against OpenAI's and Anthropic's own pages on 2026-09-26; other vendors from secondary sources, so re-verify monthly |
 | Structured-data (schema.org) required-field checker for articles | 2 | 1 | 2 | 3 | 2 | 10 | idea | overlaps `py-jsonldcheck`; probably an extension |
 | Public-status page generator | 1 | 1 | 1 | 1 | 1 | 5 | dropped | needs the network and a server; not an offline tool |
 
