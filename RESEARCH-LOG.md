@@ -2,6 +2,18 @@
 
 One dated entry per research session: the queries, what was found, links, and what it changed in the backlog. Newest first. A claim with no source does not go in the backlog.
 
+## 2026-09-26 (sixth session): AI-content markers, with a real test corpus
+
+**Question:** can the AI-content marker audit be built so that its claims can actually be verified?
+
+**Primary sources read in full:** the [IPTC Digital Source Type vocabulary](https://cv.iptc.org/newscodes/digitalsourcetype/) (17 terms with exact URIs; four are AI-generated or AI-modified), the [Commission's page on the Code of Practice on marking and labelling AI-generated content](https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content) (final version published 10 June 2026, confirmed as an adequate voluntary tool; it does not, on that page, say which marking techniques to use), and the text of Article 50 (unofficial reproduction). The C2PA specification page was truncated when fetched, so the PNG (`caBX`) and WebP (`C2PA`) embedding rules rest on secondary descriptions that agree with each other; they are tested on constructed files only.
+
+**The verification problem was solved by looking for the standard body's own test corpus.** The C2PA project publishes sample files with a table of what each contains. Eleven real JPEGs (Adobe, Nikon, Truepic) were used as ground truth: the two listed as "No Content Credentials" give no manifest, and all others (including invalid-signature and hash-mismatch samples) give one. None of the real manifests names an IPTC source type, so that part remains constructed-only, and the README says so.
+
+**A real bug was found by the generated tests, not the real files:** manifest text is length-prefixed CBOR, so reading letters after an IPTC URI swallowed the next byte. Terms are now matched against the known vocabulary.
+
+**Real pages:** the page mode was run over eight blog articles from an estate site. The only AI wording in any of them is marketing text ("AI-powered"), which the tool correctly did not count as disclosure, confirmed by an independent `grep`. None contains disclosure or editorial wording. Whether those pages are AI-generated is for the owner to say; if they are, that is what the Act asks the owner to think about. Nothing about this is in any public repository.
+
 ## 2026-09-26 (fifth session): consent-before-tracking, validated on real pages
 
 **Question:** can a tool show what a page loads before consent, and does it hold up on real pages?
