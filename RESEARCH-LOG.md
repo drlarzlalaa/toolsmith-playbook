@@ -2,6 +2,27 @@
 
 One dated entry per research session: the queries, what was found, links, and what it changed in the backlog. Newest first. A claim with no source does not go in the backlog.
 
+## 2026-09-26 (fourth session): new areas: llms.txt, AI-content rules, accessibility law, cookie consent
+
+**Question:** the remaining backlog scored low, so which new areas have need, a gap, and something verifiable offline?
+
+**Queries run:** llms.txt adoption, validators and common mistakes; EU AI Act Article 50 transparency obligations and website labelling; European Accessibility Act enforcement and common WCAG failures; GDPR cookie consent violations and enforcement in 2026.
+
+**Primary sources read in full:** the [llmstxt.org specification](https://llmstxt.org/) and the text of [Article 50 of the AI Act](https://artificialintelligenceact.eu/article/50/) (an unofficial reproduction of the Regulation, not the Official Journal).
+
+**Findings:**
+
+- **llms.txt:** one study of 300,000 domains in early 2026 put adoption near 10%, mostly developer-facing sites. The specification requires only an H1; there is no official validator; common mistakes are HTML served instead of text, relative URLs, no summary, and dumping every URL. Sources: [State of llms.txt 2026](https://presenc.ai/research/state-of-llms-txt-2026), [llms.txt: The Complete 2026 Guide](https://llmpulse.ai/blog/llms-txt-guide/). That these files change how AI products behave is not established by anything read here.
+- **AI Act Article 50** applies from 2 August 2026. Providers must mark AI outputs in a machine-readable way; deployers must disclose deepfakes and AI-generated text published to inform the public on matters of public interest, unless the text had human review or editorial control and a person holds editorial responsibility; information must be clear, distinguishable, given no later than first exposure, and accessible. Sources: the Article 50 text above, [Orrick's analysis](https://www.orrick.com/en/Insights/2026/08/EU-AI-Act-Transparency-Obligations-for-AI-Generated-Content-Article-50).
+- **European Accessibility Act** enforceable since 28 June 2025, first inspections reported in January 2026; colour contrast, missing alt text and missing form labels are the commonest failures; automated checkers find only 30 to 57% of issues. Source: [European Accessibility Act 2026](https://www.levelaccess.com/compliance-overview/european-accessibility-act-eaa/). Existing free tools (axe, pa11y, Lighthouse) already cover this well.
+- **Cookie consent:** the most frequent violation is placing advertising cookies or firing tags before the visitor interacts with the banner; a "reject" button that does not block cookies is treated as worse than none. Source: [Cookie Consent Fines 2025-2026](https://kukie.io/blog/cookie-consent-fines-2025-2026).
+
+**Estate observations (aggregates only):** neither `earnifyhub.com` nor `earnifyhubmailer.com` serves an `llms.txt` (both answer 404); analytics show EU visitors (France, Spain, UK among the top countries).
+
+**Result:** `py-llmstxtcheck` built and published. AI-content disclosure and consent-before-tracking scored 12 each and are in the backlog with their verification problems written down; accessibility was dropped as crowded.
+
+**Limits:** the AI Act text was read from a reproduction, not the Official Journal; the legal significance for a specific site needs a lawyer, and no tool here decides it.
+
 ## 2026-09-26 (later still): DMARC aggregate reports
 
 **Question:** is there a gap for reading DMARC aggregate (RUA) reports offline, and what do real reports look like?
