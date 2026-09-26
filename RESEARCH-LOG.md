@@ -2,6 +2,16 @@
 
 One dated entry per research session: the queries, what was found, links, and what it changed in the backlog. Newest first. A claim with no source does not go in the backlog.
 
+## 2026-09-26 (later still): DMARC aggregate reports
+
+**Question:** is there a gap for reading DMARC aggregate (RUA) reports offline, and what do real reports look like?
+
+**Findings:** no repository in the catalog reads reports (`py-emailauth` checks the DNS records, `py-mailtrace` one message). The format is specified in RFC 7489 appendix C. Real reports vary by reporter (namespaces, optional fields, zip or gzip or attached email), which is why the tool was validated against real ones.
+
+**Validation on real data (read-only, nothing kept):** the parser was run once over 229 real reports in a working mailbox, from Yahoo, Google, Microsoft (consumer and enterprise), Zoho, Mail.ru and GMX: all 229 parsed, no failures. Only aggregate results were kept outside the mailbox; no report data, address or domain is in any repository.
+
+**Result:** `py-dmarcreport` published.
+
 ## 2026-09-26 (later): AI-crawler names and robots.txt behaviour
 
 **Question:** which AI crawlers exist, what do they do, and which honour `robots.txt`? (Needed to build the `bots` command in `py-robotscheck`.)

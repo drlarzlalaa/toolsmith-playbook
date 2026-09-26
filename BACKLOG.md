@@ -11,7 +11,7 @@ Ranked candidates. Score with the rubric in [`PLAYBOOK.md`](PLAYBOOK.md) section
 | File-type-by-content and extension mismatch | 2 | 2 | 3 | 2 | 3 | 12 | published: `py-magicfile` | upload validation |
 | `pyproject.toml`, Pipfile and lockfile support in `py-depaudit` | 2 | 2 | 3 | 2 | 2 | 11 | idea | listed as unsupported in its README; `tomllib` exists only on 3.11+, needs a small fallback parser |
 | AI-disclosure and endorsement wording checker for affiliate content | 2 | 2 | 2 | 3 | 2 | 11 | idea | FTC risk finding; overlaps `py-rellint`, check first; wording rules are judgement calls, be explicit about that |
-| DMARC aggregate report (XML) summariser | 2 | 2 | 3 | 3 | 2 | 12 | idea | estate receives DMARC reports daily; parse with `xml.etree`, verify on constructed reports |
+| DMARC aggregate report (XML) summariser | 2 | 2 | 3 | 3 | 2 | 12 | published: `py-dmarcreport` | estate receives DMARC reports daily; validated on 229 real reports from 8 reporters (0 parse failures), none committed |
 | MCP server config diff between two versions | 1 | 2 | 3 | 1 | 2 | 9 | idea | would extend `py-agentlint`; wait for demand |
 | Robots.txt AI-crawler policy checker (GPTBot, ClaudeBot and similar) | 2 | 2 | 3 | 3 | 3 | 13 | published: `py-robotscheck` 0.2.0 (`bots` command, an extension, not a new repo) | estate logs show heavy AI-crawler traffic; crawler list verified against OpenAI's and Anthropic's own pages on 2026-09-26; other vendors from secondary sources, so re-verify monthly |
 | Structured-data (schema.org) required-field checker for articles | 2 | 1 | 2 | 3 | 2 | 10 | idea | overlaps `py-jsonldcheck`; probably an extension |
