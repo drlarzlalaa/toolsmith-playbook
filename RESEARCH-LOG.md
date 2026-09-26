@@ -2,6 +2,16 @@
 
 One dated entry per research session: the queries, what was found, links, and what it changed in the backlog. Newest first. A claim with no source does not go in the backlog.
 
+## 2026-09-26 (fifth session): consent-before-tracking, validated on real pages
+
+**Question:** can a tool show what a page loads before consent, and does it hold up on real pages?
+
+**What was built and how it was checked:** `py-consentaudit` (HAR and saved-HTML modes). Constructed and generated HAR files for the rules; then, per the playbook, the HTML mode was run read-only over eight real public home pages (five small sites, three large news sites) and each finding was compared with a plain `grep` of the same page.
+
+**What the real pages taught:** the first version could not tell a page that holds its Google tags behind Consent Mode defaults or a consent platform from one that does not, so consent-platform and Consent Mode detection were added. A test-only design would not have found that, and neither would a checker written from the tracker list alone.
+
+**Estate observation (aggregate, kept out of every public repository):** of five estate home pages, one writes a Google tag (GA4) into its HTML and runs it on load, and none of the five contains any consent management script, Consent Mode default, or the words "cookie" or "consent" in its HTML. The estate's own analytics tables also record visitor IP addresses and countries, and its analytics show EU visitors. Static HTML cannot see scripts added at run time, so this needs a HAR from a clean browser to confirm. It is a compliance question for the owner, not a conclusion here; the fix is a live-site change that needs the owner's decision.
+
 ## 2026-09-26 (fourth session): new areas: llms.txt, AI-content rules, accessibility law, cookie consent
 
 **Question:** the remaining backlog scored low, so which new areas have need, a gap, and something verifiable offline?
